@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="APIDATAPeople.css">
+        <title>StarsWarsAPIData</title>
+    </head>
+    <body>
+        <h1>People's List from Star Wars</h1>
+
+        <h2>Species Count</h2>
+        <div class="card-list">
+        </div>
+        <span id="button-bar">
+            <button class="previous-page">Previous Page</button>
+            <button class="current-page"></button>
+            <button class="next-page">Next Page</button>
+        </span>
+
+        <!-- searching feature not implemented as of now -->
+        <form action="">
+            <input type="text">
+            <input type="submit">
+        </form>
+
+        <table id="app">
+            <caption>Star Wars People List</caption>
+            <tr>
+                <th>Icon</th>
+                <th>Name</th>
+                <th>Height</th>
+                <th>Mass</th>
+                <th>Hair Color</th>
+                <th>Skin Color</th>
+                <th>Eye Color</th>
+                <th>Birth Year</th>
+                <th>Gender</th>
+                <th>Home World</th>
+                <th>Films</th>
+                <th>Species</th>
+                <th>Vehicles</th>
+                <th>Star Ships</th>
+                <th>Created</th>
+                <th>Edited</th>
+                <th>URL</th>
+            </tr>
+        </table>
+        
+        <span id="button-bar">
+            <button class="previous-page">Previous Page</button>
+            <button class="current-page"></button>
+            <button class="next-page">Next Page</button>
+        </span>
+        <script src="fetchStarsWarsAPIData.js"></script>
+    </body>
+</html>
