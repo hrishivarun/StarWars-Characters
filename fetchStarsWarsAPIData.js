@@ -130,7 +130,7 @@ for(let i=0; i<88; i++){
             speciesCount.style.display= 'block';
             speciesCount.textContent= speciesCardList[data.name];
             speciesCard.append(speciesCount);
-            document.querySelector('div').append(speciesCard);
+            document.querySelector('.card-list').append(speciesCard);
         }
     });
     row.append(species);
@@ -220,9 +220,27 @@ for(let i=0; i<88; i++){
 
 }
 
+
+
+//showing and hiding species count
+const cardList= document.querySelector('.card-list');
+cardList.style.display= 'none';
+const showHideCardButton= document.querySelector('.show-hide-species-count');
+showHideCardButton.addEventListener('click', () => {
+    if(cardList.style.display=='none'){
+        cardList.style.display='flex';
+        showHideCardButton.textContent= 'Hide Species Count';
+    }else{
+        cardList.style.display='none';
+        showHideCardButton.textContent= 'Show Species Count';
+    }
+});
+
+
+
 //paginating the list
 
-//initialzing a variable referencing the current page count 
+//initialzing a variable, referencing the current page count 
 let currentPageCount= 1;
 const currentPage= document.querySelectorAll('.current-page');
 for(let i=0; i<currentPage.length; i++){
@@ -307,3 +325,16 @@ document.addEventListener('click', e => {
         }
     }
 });
+
+//showing entries as per the search input
+searchForm= document.forms[0];
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    for(let i=0; i<peopleList.length-1; i++){
+        if(!peopleList[i].querySelector(`td:nth-child(2)`).textContent.includes(`${searchForm['search-list'].value}`)){
+         peopleList[i].style.display= 'none';
+        }else{
+            peopleList[i].style.display= 'table-row'; 
+        }
+    }
+})
